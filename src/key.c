@@ -253,7 +253,7 @@ void getAllPC2Keys(int PC2ALL[16][48])
     hexToBin(hexkey);
 
    for(int i=0;i<56;i++){
-	   keyP1[i]=(int)bin[PC1[i-1]]-48;
+	   keyP1[i]=(int)bin[PC1[i]-1]-48;
    }
 
    for(int i=0;i<28;i++)
@@ -285,8 +285,8 @@ for(int i=0;i<16;i++){
 for(int i=0;i<16;i++){
 	for(int j=0;j<48;j++){
 		if(PC2[j]<=28)
-			allPc2[i][j]=allLeftKeyShifts[i][PC2[j-1]];
-		else allPc2[i][j]=allRightKeyShifts[i][PC2[j-29]];
+			allPc2[i][j]=allLeftKeyShifts[i][PC2[j]-1];
+		else allPc2[i][j]=allRightKeyShifts[i][PC2[j]-29];
 	}
 }
 
