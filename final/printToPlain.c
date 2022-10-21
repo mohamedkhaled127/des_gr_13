@@ -22,7 +22,7 @@ void printToPlain (int round , int leftOutput[32],int rightOutput[32],int key[48
 {
 
    // use appropriate location if you are using MacOS or Linux
-	if(round==0)
+	if(round==0 &&!fplain)
    fplain = fopen("plain.txt","w");
 
    if(fplain == NULL)
@@ -48,6 +48,7 @@ void printToPlain (int round , int leftOutput[32],int rightOutput[32],int key[48
 void printPlainOutput(int res[64]){
 	fprintf(fplain,"%s"," plain text is : ");
 	binpToHex(res,64);
+	fprintf(fplain,"\n");
 }
 
 
