@@ -22,7 +22,7 @@ void printToCipher (int round , int leftOutput[32],int rightOutput[32],int key[4
 {
 
    // use appropriate location if you are using MacOS or Linux
-	if(round==0)
+	if(round==0 && !fcipher)
    fcipher = fopen("cipher.txt","w");
 
    if(fcipher == NULL)
@@ -48,6 +48,7 @@ void printToCipher (int round , int leftOutput[32],int rightOutput[32],int key[4
 void printCypherOutput(int res[64]){
 	fprintf(fcipher,"%s"," cipher text is : ");
 	binToHex(res,64);
+	fprintf(fcipher,"\n");
 }
 
 
